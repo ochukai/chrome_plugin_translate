@@ -1,0 +1,36 @@
+{
+	"name": "translate helper",
+	"description": "Will help you read the document in chrome.",
+	"version": "0.0.1",
+	"manifest_version": 2,
+	"icons":
+	{
+		"16": "images/translate_16.png",
+		"48": "images/translate_48.png",
+		"128": "images/translate_128.png"
+	},
+	"browser_action": 
+	{
+		"default_icon": "images/translate_48.png",
+		"default_title": "Translate Helper",
+		"default_popup": "popup.html"
+	},
+	"content_scripts":
+	[
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": ["scripts/jquery-1.11.1.min.js", "scripts/translate.js"]
+		}
+	],
+	"permissions":
+	[
+		"tabs",
+		"https://*/*",
+		"http://*/*",
+		"notifications"
+	],
+	"background": 
+	{ 
+		"scripts": ["scripts/jquery-1.11.1.min.js", "scripts/background.js"] 
+	}
+}
